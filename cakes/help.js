@@ -1,7 +1,15 @@
 exports.command = {
-    run: (bakery, msg, args) => {
-        const cmds = bakery.commands.filter(c => !c.command.config.ownerOnly).map(c => `${c.command.help.usage} - ${c.command.help.desc}`).join("\n")
-        msg.channel.createMessage(cmds)
+    run: (bakery, msg, args, prefix) => {
+        const cmds = bakery.commands.filter(c => !c.command.config.ownerOnly).map(c => `\`${prefix}${c.command.help.usage}\` **--** ${c.command.help.desc}`).join("\n")
+        if(!args[0]) {
+            msg.channel.createMessage({embed: {
+                color: 0xFE0060,
+                description: cmds
+            }})
+        } else {
+            const cmd = bakery.commands.get(args[0])
+            msg.channel.createMessage(cmd)
+        }
     },
     config: {
         aliases: []

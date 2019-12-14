@@ -30,7 +30,7 @@ module.exports = (cake, msg) => {
         } else {
             return;
         }
-        cmd.run(cake, msg, args)
+        cmd.run(cake, msg, args, prefix)
     } catch(err) {
         console.log(err)
     }
