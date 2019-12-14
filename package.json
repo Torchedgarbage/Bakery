@@ -1,0 +1,34 @@
+{
+  "name": "bakery",
+  "version": "1.0.0",
+  "description": "Rewrite of my old Cake bot, to provide you with all kinds of Cake images!",
+  "main": "cake.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamuraiStacks/Bakery.git"
+  },
+  "keywords": [
+    "cake",
+    "bot",
+    "discord-bot",
+    "discord",
+    "rewrite",
+    "bakery",
+    "fun",
+    "social",
+    "economy"
+  ],
+  "author": "SamuraiStacks",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/SamuraiStacks/Bakery/issues"
+  },
+  "homepage": "https://github.com/SamuraiStacks/Bakery#readme",
+  "dependencies": {
+    "cat-loggr": "^1.0.17",
+    "eris": "^0.11.1"
+  }
+}
