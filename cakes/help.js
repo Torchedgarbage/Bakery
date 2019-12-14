@@ -10,7 +10,7 @@ exports.command = {
                     icon_url: bakery.user.avatarURL
                 },
                 thumbnail: {
-                    icon_url: bakery.user.avatarURl
+                    url: bakery.user.avatarURL.replace("jpg", "png")
                 }
             }})
         } else {
