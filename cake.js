@@ -58,7 +58,7 @@ fs.readdir("./cakes/", (err, f) => {
 
     for(let i = 0; i < files.length; i++) {
         let props = require(`./cakes/${files[i]}`)
-        props.file = files[i]
+        props.command.file = files[i]
         cake.commands.set(props.command.help.name, props)
         props.command.config.aliases.forEach(a => {
             cake.aliases.set(a, props.command.help.name)

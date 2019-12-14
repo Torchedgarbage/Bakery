@@ -6,6 +6,9 @@ exports.command = {
         aliases: []
     },
     help: {
-        name: "ping"
+        name: "ping",
+        desc: "Shows the response time.",
+        usage: "ping",
+        example: "bakery ping"
     }
 }
