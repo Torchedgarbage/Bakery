@@ -115,7 +115,7 @@ app.get("/api/image/", (req, res) => {
         if (err) {
             return console.log('Unable to scan directory: ' + err);
         }
-        res.status(200).send({ file: `/images/${files}`})
+        res.status(200).send({ file: `/images/${files[Math.floor(Math.random() * files.length)]}`})
     });
 })
 
