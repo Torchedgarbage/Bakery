@@ -59,9 +59,9 @@ fs.readdir("./cakes/", (err, f) => {
     for(let i = 0; i < files.length; i++) {
         let props = require(`./cakes/${files[i]}`)
         props.file = files[i]
-        cake.commands.set(props.help.name, props)
-        props.config.aliases.forEach(a => {
-            cake.aliases.set(a, props.help.name)
+        cake.commands.set(props.command.help.name, props)
+        props.command.config.aliases.forEach(a => {
+            cake.aliases.set(a, props.command.help.name)
         })
         cake.loggr.commands(`Successfully loaded command ${files[i].slice(0, -3)}.`)
     }
