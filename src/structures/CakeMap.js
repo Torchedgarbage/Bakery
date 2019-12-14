@@ -5,7 +5,7 @@ class CakeMap extends Map {
 
     filter(fn, thisArg) {
         if (thisArg) fn = fn.bind(thisArg);
-        const results = new FancyMap();
+        const results = new CakeMap();
         for (const [key, val] of this) {
             if (fn(val, key, this)) results.set(key, val);
         }

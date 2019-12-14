@@ -43,8 +43,8 @@ const fs = require("fs")
 // But to make it "global" we can basically
 // attatch it to the client.
 // TODO: Make a custom extended Map class.
-cake.commands = new Map()
-cake.aliases = new Map()
+cake.commands = new Cake.CakeMap()
+cake.aliases = new Cake.CakeMap()
 
 fs.readdir("./cakes/", (err, f) => {
     if(err) return loggr.error(err)
