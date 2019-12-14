@@ -114,10 +114,8 @@ app.get("/api/image/", (req, res) => {
     fs.readdir(directoryPath, function (err, files) {
         if (err) {
             return console.log('Unable to scan directory: ' + err);
-        } 
-        files.forEach(function (file) {
-            res.status(200).send({ file: `/images/${file}`})
-        });
+        }
+        res.status(200).send({ file: `/images/${files}`})
     });
 })
 
