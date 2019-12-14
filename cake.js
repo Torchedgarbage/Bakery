@@ -97,11 +97,28 @@ cake.connect()
 
 const express = require("express")
 const app = express()
+const path = require('path');
 
 app.get("/", (req, res) => {
     res.status(200).send(`[
         GET /api/images
     ]`)
+})
+ 
+app.get("/api/", (req, res) => {
+    res.status(200).send("go away")
+})
+
+app.get("/api/image/", (req, res) => {
+    const directoryPath = path.join(__dirname, 'src/CakeAPI/images');
+    fs.readdir(directoryPath, function (err, files) {
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        } 
+        files.forEach(function (file) {
+            res.status(200).send({ file: `/images/${file}`})
+        });
+    });
 })
 
 app.listen(4200, () => {
