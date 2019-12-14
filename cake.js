@@ -89,3 +89,21 @@ fs.readdir("./events/", (err, f) => {
 
 // Connect to the Discord API.
 cake.connect()
+
+/* 
+    This part of the main file is for the CakeAPI. Here we will have
+    code for an express app.
+*/
+
+const express = require("express")
+const app = express()
+
+app.get("/", (req, res) => {
+    res.status(200).send(`[
+        GET /api/images
+    ]`)
+})
+
+app.listen(4200, () => {
+    cake.loggr.log("CakeAPI is now online!")
+})
