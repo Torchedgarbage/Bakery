@@ -4,7 +4,14 @@ exports.command = {
         if(!args[0]) {
             msg.channel.createMessage({embed: {
                 color: 0xFE0060,
-                description: cmds
+                description: cmds,
+                author: {
+                    name: "Bakery - Help",
+                    icon_url: bakery.user.avatarURL
+                },
+                thumbnail: {
+                    icon_url: bakery.user.avatarURl
+                }
             }})
         } else {
             const cmd = bakery.commands.get(args[0])
